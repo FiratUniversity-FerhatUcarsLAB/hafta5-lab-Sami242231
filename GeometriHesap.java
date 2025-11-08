@@ -68,7 +68,45 @@ public class GeometriHesap {
         
         return 0.0; // Degistirin
     }
-    
+    // 1️⃣ Kare Alanı
+public static double calculateSquareArea(double side) {
+    return side * side;
+}
+
+// 2️⃣ Kare Çevresi
+public static double calculateSquarePerimeter(double side) {
+    return 4 * side;
+}
+
+// 3️⃣ Dikdörtgen Alanı
+public static double calculateRectangleArea(double width, double height) {
+    return width * height;
+}
+
+// 4️⃣ Dikdörtgen Çevresi
+public static double calculateRectanglePerimeter(double width, double height) {
+    return 2 * (width + height);
+}
+
+// 5️⃣ Daire Alanı
+public static double calculateCircleArea(double radius) {
+    return Math.PI * Math.pow(radius, 2);
+}
+
+// 6️⃣ Daire Çevresi
+public static double calculateCircleCircumference(double radius) {
+    return 2 * Math.PI * radius;
+}
+
+// 7️⃣ Üçgen Alanı
+public static double calculateTriangleArea(double base, double height) {
+    return (base * height) / 2;
+}
+
+// 8️⃣ Üçgen Çevresi
+public static double calculateTrianglePerimeter(double a, double b, double c) {
+    return a + b + c;
+}
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
@@ -106,17 +144,102 @@ public class GeometriHesap {
         double side3 = input.nextDouble();
         
         // HESAPLAMALARI YAP - Metotlari cagir
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      import java.util.Scanner;
+
+public class GeometryCalculator {
+
+    // 1️⃣ Kare Alanı
+    public static double calculateSquareArea(double side) {
+        return side * side;
+    }
+
+    // 2️⃣ Kare Çevresi
+    public static double calculateSquarePerimeter(double side) {
+        return 4 * side;
+    }
+
+    // 3️⃣ Dikdörtgen Alanı
+    public static double calculateRectangleArea(double width, double height) {
+        return width * height;
+    }
+
+    // 4️⃣ Dikdörtgen Çevresi
+    public static double calculateRectanglePerimeter(double width, double height) {
+        return 2 * (width + height);
+    }
+
+    // 5️⃣ Daire Alanı
+    public static double calculateCircleArea(double radius) {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    // 6️⃣ Daire Çevresi
+    public static double calculateCircleCircumference(double radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    // 7️⃣ Üçgen Alanı
+    public static double calculateTriangleArea(double base, double height) {
+        return (base * height) / 2;
+    }
+
+    // 8️⃣ Üçgen Çevresi
+    public static double calculateTrianglePerimeter(double a, double b, double c) {
+        return a + b + c;
+    }
+
+    // === MAIN ===
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Kare
+        System.out.print("Kare kenar uzunluğu: ");
+        double squareSide = input.nextDouble();
+
+        // Dikdörtgen
+        System.out.print("Dikdörtgen genişlik: ");
+        double rectWidth = input.nextDouble();
+        System.out.print("Dikdörtgen yükseklik: ");
+        double rectHeight = input.nextDouble();
+
+        // Daire
+        System.out.print("Daire yarıçap: ");
+        double circleRadius = input.nextDouble();
+
+        // Üçgen
+        System.out.print("Üçgen taban uzunluğu: ");
+        double triBase = input.nextDouble();
+        System.out.print("Üçgen yükseklik: ");
+        double triHeight = input.nextDouble();
+        System.out.print("Üçgen kenar a: ");
+        double triA = input.nextDouble();
+        System.out.print("Üçgen kenar b: ");
+        double triB = input.nextDouble();
+        System.out.print("Üçgen kenar c: ");
+        double triC = input.nextDouble();
+
+        // Hesaplamalar ve çıktı
+        System.out.println("\n=== Hesap Sonuçları ===");
+
+        System.out.printf("Kare Alanı: %.2f, Çevresi: %.2f%n",
+                calculateSquareArea(squareSide),
+                calculateSquarePerimeter(squareSide));
+
+        System.out.printf("Dikdörtgen Alanı: %.2f, Çevresi: %.2f%n",
+                calculateRectangleArea(rectWidth, rectHeight),
+                calculateRectanglePerimeter(rectWidth, rectHeight));
+
+        System.out.printf("Daire Alanı: %.2f, Çevresi: %.2f%n",
+                calculateCircleArea(circleRadius),
+                calculateCircleCircumference(circleRadius));
+
+        System.out.printf("Üçgen Alanı: %.2f, Çevresi: %.2f%n",
+                calculateTriangleArea(triBase, triHeight),
+                calculateTrianglePerimeter(triA, triB, triC));
+
+        input.close();
+    }
+            }  
         // SONUCLARI YAZDIR
         System.out.println("\n========================================");
         System.out.println("         HESAPLAMA SONUCLARI");

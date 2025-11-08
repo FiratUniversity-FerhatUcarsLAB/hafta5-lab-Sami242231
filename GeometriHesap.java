@@ -1,7 +1,7 @@
 /*
- * Ad Soyad: [ADINIZI BURAYA YAZIN]
- * Ogrenci No: [OGRENCI NUMARANIZI BURAYA YAZIN]
- * Tarih: [TARIHI BURAYA YAZIN]
+ * Ad Soyad: [Sami Yusuf Yıldız]
+ * Ogrenci No: [250541081]
+ * Tarih: [08/11/2025]
  * Aciklama: Gorev 1 - Geometrik Sekil Hesaplayici
  * 
  * Bu program temel geometrik sekillerin alan ve
@@ -139,7 +139,27 @@ public class GeometriHesap {
         
         
         System.out.println("========================================");
-        
+        Kare kenar uzunluğu: 5
+Kare Alanı: 25.00
+Kare Çevresi: 20.00
+
+Dikdörtgen genişliği: 4
+Dikdörtgen yüksekliği: 7
+Dikdörtgen Alanı: 28.00
+Dikdörtgen Çevresi: 22.00
+
+Daire yarıçapı: 3
+Daire Alanı: 28.27
+Daire Çevresi: 18.85
+
+Üçgen tabanı: 6
+Üçgen yüksekliği: 4
+Üçgen kenar a: 5
+Üçgen kenar b: 6
+Üçgen kenar c: 7
+Üçgen Alanı: 12.00
+Üçgen Çevresi: 18.00
+
         input.close();
     }
 }

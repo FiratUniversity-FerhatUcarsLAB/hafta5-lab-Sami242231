@@ -1,7 +1,7 @@
 /*
- * Ad Soyad: [ADINIZI BURAYA YAZIN]
- * Ogrenci No: [OGRENCI NUMARANIZI BURAYA YAZIN]
- * Tarih: [TARIHI BURAYA YAZIN]
+ * Ad Soyad: [Sami Yusuf Yıldız]
+ * Ogrenci No: [250541081]
+ * Tarih: [08/11/2025]
  * Aciklama: Gorev 2 - Fizik Formulu Asistani
  *
  * Bu program temel fizik formullerini kullanarak
@@ -97,6 +97,7 @@ public class FizikFormul {
 
 
         // SONUCLARI YAZDIR
+
         System.out.println("\n========================================");
         System.out.println("        HESAPLAMA SONUCLARI");
         System.out.println("========================================");
@@ -120,6 +121,15 @@ public class FizikFormul {
         System.out.printf("  Momentum (p = m*v)        : %.2f kg·m/s\n", momentum);
 
         System.out.println("\n========================================");
+Hız (v): 10.438 m/s
+İvme (a): 1.044 m/s²
+Kuvvet (F): 78.300 N
+İş (W): 391.500 J
+Güç (P): 40.877 W
+Kinetik Enerji (KE): 4082.016 J
+Potansiyel Enerji (PE): 1470.000 J
+Momentum (p): 782.850 kg·m/s
+Yerçekimi sabiti: 9.80 m/s²
 
         input.close();
     }

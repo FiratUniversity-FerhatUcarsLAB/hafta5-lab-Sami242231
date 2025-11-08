@@ -82,7 +82,39 @@ public class SepetHesap {
         // Indirim Bilgisi
         System.out.println("\nIndirim Kuponu Yuzdesi (%): ");
         double discountPercent = input.nextDouble();
+// Sabitler
+final static double VAT_RATE = 0.18;       // %18 KDV
+final static double SHIPPING_FEE = 29.99;  // Kargo ücreti
 
+// 1️⃣ Ürün toplamını hesaplar (fiyat × adet)
+public static double calculateItemTotal(double price, int quantity) {
+    return price * quantity;
+}
+
+// 2️⃣ Ara toplamı hesaplar (3 ürünün toplamı)
+public static double calculateSubTotal(double t1, double t2, double t3) {
+    return t1 + t2 + t3;
+}
+
+// 3️⃣ İndirim tutarını hesaplar (ara toplam × %indirim)
+public static double calculateDiscountAmount(double subTotal, double discountPercent) {
+    return subTotal * (discountPercent / 100);
+}
+
+// 4️⃣ İndirimli toplamı hesaplar (ara toplam − indirim)
+public static double calculateDiscountedTotal(double subTotal, double discountAmount) {
+    return subTotal - discountAmount;
+}
+
+// 5️⃣ KDV tutarını hesaplar (indirimli toplam × VAT_RATE)
+public static double calculateVat(double discountedTotal) {
+    return discountedTotal * VAT_RATE;
+}
+
+// 6️⃣ Genel toplamı hesaplar (indirimli toplam + KDV + kargo)
+public static double calculateGrandTotal(double discountedTotal, double vatAmount) {
+    return discountedTotal + vatAmount + SHIPPING_FEE;
+}
         // HESAPLAMALARI YAP - Metotlari cagir
         // 1. Urunlerin satis toplamlarini hesapla
     
@@ -99,41 +131,78 @@ public class SepetHesap {
       
 
         // 6. Genel toplami hesapla
-import java.util.Scanner;
+inal static double VAT_RATE = 0.18;       // %18 KDV
+    final static double SHIPPING_FEE = 29.99;  // Kargo ücreti
 
-public class ShoppingCart {
-
-    // 6 Metot + Sabitler
-
-    // 1️⃣ Ürün toplam fiyatını hesaplar
+    // 1️⃣ Ürün toplamını hesaplar (fiyat × adet)
     public static double calculateItemTotal(double price, int quantity) {
         return price * quantity;
     }
 
-    // 2️⃣ 3 ürünün toplamını (ara toplam) hesaplar
+    // 2️⃣ Ara toplamı hesaplar (3 ürünün toplamı)
     public static double calculateSubTotal(double t1, double t2, double t3) {
         return t1 + t2 + t3;
     }
 
-    // 3️⃣ İndirim tutarını hesaplar
+    // 3️⃣ İndirim tutarını hesaplar (ara toplam × %indirim)
     public static double calculateDiscountAmount(double subTotal, double discountPercent) {
         return subTotal * (discountPercent / 100);
     }
 
-    // 4️⃣ İndirimli toplamı hesaplar
+    // 4️⃣ İndirimli toplamı hesaplar (ara toplam − indirim)
     public static double calculateDiscountedTotal(double subTotal, double discountAmount) {
         return subTotal - discountAmount;
     }
 
-    // 5️⃣ KDV tutarını hesaplar
+    // 5️⃣ KDV tutarını hesaplar (indirimli toplam × VAT_RATE)
     public static double calculateVat(double discountedTotal) {
-        final double VAT_RATE = 0.18;
         return discountedTotal * VAT_RATE;
     }
 
-    // 6️⃣ Genel toplamı hesaplar (KDV + Kargo)
+    // 6️⃣ Genel toplamı hesaplar (indirimli toplam + KDV + kargo)
     public static double calculateGrandTotal(double discountedTotal, double vatAmount) {
-        final double SHIPPING_FEE
+        return discountedTotal + vatAmount + SHIPPING_FEE;
+    }
+
+    // === MAIN ===
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("=== Sepet Hesaplayıcı ===");
+
+        // Ürün 1
+        System.out.print("1. ürün fiyatı: ");
+        double price1 = input.nextDouble();
+        System.out.print("1. ürün adedi: ");
+        int qty1 = input.nextInt();
+
+        // Ürün 2
+        System.out.print("2. ürün fiyatı: ");
+        double price2 = input.nextDouble();
+        System.out.print("2. ürün adedi: ");
+        int qty2 = input.nextInt();
+
+        // Ürün 3
+        System.out.print("3. ürün fiyatı: ");
+        double price3 = input.nextDouble();
+        System.out.print("3. ürün adedi: ");
+        int qty3 = input.nextInt();
+
+        // İndirim
+        System.out.print("İndirim oranı (%): ");
+        double discountPercent = input.nextDouble();
+
+        // Hesaplamalar
+        double total1 = calculateItemTotal(price1, qty1);
+        double total2 = calculateItemTotal(price2, qty2);
+        double total3 = calculateItemTotal(price3, qty3);
+
+        double subTotal = calculateSubTotal(total1, total2, total3);
+        double discountAmount = calculateDiscountAmount(subTotal, discountPercent);
+        double discountedTotal = calculateDiscountedTotal(subTotal, discountAmount);
+        double vatAmount = calculateVat(discountedTotal);
+        double grandTotal = calculateGrandTotal(discountedTotal, vatAmount);
+
 
         // SONUCLARI YAZDIR
         System.out.println("\n========================================");

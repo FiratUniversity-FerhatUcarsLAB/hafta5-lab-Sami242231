@@ -1,7 +1,7 @@
 /*
- * Ad Soyad: [ADINIZI BURAYA YAZIN]
- * Ogrenci No: [OGRENCI NUMARANIZI BURAYA YAZIN]
- * Tarih: [TARIHI BURAYA YAZIN]
+ * Ad Soyad: [Sami Yusuf Yıldız]
+ * Ogrenci No: [250541081]
+ * Tarih: [08/11/2025]
  * Aciklama: Gorev 3 - E-Ticaret Sepet Hesaplayici
  *
  * Bu program 3 adet urunun sepet tutarini
@@ -99,7 +99,41 @@ public class SepetHesap {
       
 
         // 6. Genel toplami hesapla
+import java.util.Scanner;
 
+public class ShoppingCart {
+
+    // 6 Metot + Sabitler
+
+    // 1️⃣ Ürün toplam fiyatını hesaplar
+    public static double calculateItemTotal(double price, int quantity) {
+        return price * quantity;
+    }
+
+    // 2️⃣ 3 ürünün toplamını (ara toplam) hesaplar
+    public static double calculateSubTotal(double t1, double t2, double t3) {
+        return t1 + t2 + t3;
+    }
+
+    // 3️⃣ İndirim tutarını hesaplar
+    public static double calculateDiscountAmount(double subTotal, double discountPercent) {
+        return subTotal * (discountPercent / 100);
+    }
+
+    // 4️⃣ İndirimli toplamı hesaplar
+    public static double calculateDiscountedTotal(double subTotal, double discountAmount) {
+        return subTotal - discountAmount;
+    }
+
+    // 5️⃣ KDV tutarını hesaplar
+    public static double calculateVat(double discountedTotal) {
+        final double VAT_RATE = 0.18;
+        return discountedTotal * VAT_RATE;
+    }
+
+    // 6️⃣ Genel toplamı hesaplar (KDV + Kargo)
+    public static double calculateGrandTotal(double discountedTotal, double vatAmount) {
+        final double SHIPPING_FEE
 
         // SONUCLARI YAZDIR
         System.out.println("\n========================================");
@@ -120,6 +154,15 @@ public class SepetHesap {
         System.out.println("----------------------------------------");
         System.out.printf("GENEL TOPLAM                 : %.2f TL\n", grandTotal);
         System.out.println("========================================");
+Ürün 1 Toplamı: 300.00 TL
+Ürün 2 Toplamı: 240.00 TL
+Ürün 3 Toplamı: 50.00 TL
+Ara Toplam: 590.00 TL
+İndirim Tutarı (%10.0): 59.00 TL
+İndirimli Toplam: 531.00 TL
+KDV (%18): 95.58 TL
+Kargo Ücreti: 29.99 TL
+Genel Toplam: 656.57 TL
 
         input.close();
     }

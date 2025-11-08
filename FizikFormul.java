@@ -86,14 +86,98 @@ public class FizikFormul {
 
         System.out.print("Yukseklik (m): ");
         double height = input.nextDouble();
+// 1️⃣ Hız (v = s / t)
+public static double calculateVelocity(double distance, double time) {
+    return distance / time;
+}
 
+// 2️⃣ İvme (a = Δv / t)
+public static double calculateAcceleration(double deltaV, double time) {
+    return deltaV / time;
+}
+
+// 3️⃣ Kuvvet (F = m * a)
+public static double calculateForce(double mass, double acceleration) {
+    return mass * acceleration;
+}
+
+// 4️⃣ İş (W = F * d)
+public static double calculateWork(double force, double distance) {
+    return force * distance;
+}
+
+// 5️⃣ Güç (P = W / t)
+public static double calculatePower(double work, double time) {
+    return work / time;
+}
+
+// 6️⃣ Kinetik Enerji (KE = 0.5 * m * v^2)
+public static double calculateKineticEnergy(double mass, double velocity) {
+    return 0.5 * mass * Math.pow(velocity, 2);
+}
+
+// 7️⃣ Potansiyel Enerji (PE = m * g * h)
+public static double calculatePotentialEnergy(double mass, double height) {
+    final double GRAVITY = 9.8;
+    return mass * GRAVITY * height;
+}
+
+// 8️⃣ Momentum (p = m * v)
+public static double calculateMomentum(double mass, double velocity) {
+    return mass * velocity;
+    }
         // HESAPLAMALARI YAP - Metotlari cagir
         // 1. Hiz (v) hesaplanmali (KE ve Momentum icin gerekli)
         // 2. Ivme (a) hesaplanmali (Kuvvet icin gerekli)
         // 3. Kuvvet (F) hesaplanmali (Is icin gerekli)
         // 4. Is (W) hesaplanmali (Guc icin gerekli)
         // ... digerlerini hesaplayin
-  
+  import java.util.Scanner;
+
+public class PhysicsCalculator {
+
+    final static double GRAVITY = 9.8; // Yerçekimi sabiti (m/s²)
+
+    // 1️⃣ Hız
+    public static double calculateVelocity(double distance, double time) {
+        return distance / time;
+    }
+
+    // 2️⃣ İvme
+    public static double calculateAcceleration(double deltaV, double time) {
+        return deltaV / time;
+    }
+
+    // 3️⃣ Kuvvet
+    public static double calculateForce(double mass, double acceleration) {
+        return mass * acceleration;
+    }
+
+    // 4️⃣ İş
+    public static double calculateWork(double force, double distance) {
+        return force * distance;
+    }
+
+    // 5️⃣ Güç
+    public static double calculatePower(double work, double time) {
+        return work / time;
+    }
+
+    // 6️⃣ Kinetik Enerji
+    public static double calculateKineticEnergy(double mass, double velocity) {
+        return 0.5 * mass * Math.pow(velocity, 2);
+    }
+
+    // 7️⃣ Potansiyel Enerji
+    public static double calculatePotentialEnergy(double mass, double height) {
+        return mass * GRAVITY * height;
+    }
+
+    // 8️⃣ Momentum
+    public static double calculateMomentum(double mass, double velocity) {
+        return mass * velocity;
+    }
+
 
 
         // SONUCLARI YAZDIR

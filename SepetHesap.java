@@ -134,34 +134,18 @@ public static double calculateGrandTotal(double discountedTotal, double vatAmoun
 inal static double VAT_RATE = 0.18;       // %18 KDV
     final static double SHIPPING_FEE = 29.99;  // Kargo ücreti
 
-    // 1️⃣ Ürün toplamını hesaplar (fiyat × adet)
-    public static double calculateItemTotal(double price, int quantity) {
-        return price * quantity;
-    }
+    --- Hesaplamalar ---
+        double total1 = calculateProductTotal(price1, qty1);  // 150 × 2 = 300
+        double total2 = calculateProductTotal(price2, qty2);  // 90 × 1 = 90
+        double total3 = calculateProductTotal(price3, qty3);  // 45 × 3 = 135
 
-    // 2️⃣ Ara toplamı hesaplar (3 ürünün toplamı)
-    public static double calculateSubTotal(double t1, double t2, double t3) {
-        return t1 + t2 + t3;
-    }
+        double subtotal = calculateSubtotal(total1, total2, total3);  // 300 + 90 + 135 = 525
+        double discountAmount = calculateDiscountAmount(subtotal, discountRate); // 525 × 0.10 = 52.5
+        double discountedTotal = calculateDiscountedTotal(subtotal, discountAmount); // 525 - 52.5 = 472.5
+        double vat = calculateVAT(discountedTotal); // 472.5 × 0.18 = 85.05
+        double grandTotal = calculateGrandTotal(discountedTotal, vat); // 472.5 + 85.05 + 29.99 = 587.54
 
-    // 3️⃣ İndirim tutarını hesaplar (ara toplam × %indirim)
-    public static double calculateDiscountAmount(double subTotal, double discountPercent) {
-        return subTotal * (discountPercent / 100);
-    }
-
-    // 4️⃣ İndirimli toplamı hesaplar (ara toplam − indirim)
-    public static double calculateDiscountedTotal(double subTotal, double discountAmount) {
-        return subTotal - discountAmount;
-    }
-
-    // 5️⃣ KDV tutarını hesaplar (indirimli toplam × VAT_RATE)
-    public static double calculateVat(double discountedTotal) {
-        return discountedTotal * VAT_RATE;
-    }
-
-    // 6️⃣ Genel toplamı hesaplar (indirimli toplam + KDV + kargo)
-    public static double calculateGrandTotal(double discountedTotal, double vatAmount) {
-        return discountedTotal + vatAmount + SHIPPING_FEE;
+        // --- Sonuçlar ---
     }
 
     // === MAIN ===

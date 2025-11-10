@@ -148,44 +148,88 @@ public static double calculateTrianglePerimeter(double a, double b, double c) {
 
 public class GeometryCalculator {
 
-    // 1️⃣ Kare Alanı
+    public class GeometryCalculator {
+
+    // 1️⃣ Kare Alanı Hesaplama
+    // Formül: Alan = kenar × kenar
     public static double calculateSquareArea(double side) {
-        return side * side;
+        double area = side * side; // kare alanı hesaplanıyor
+        return area;
     }
 
-    // 2️⃣ Kare Çevresi
+    // 2️⃣ Kare Çevresi Hesaplama
+    // Formül: Çevre = 4 × kenar
     public static double calculateSquarePerimeter(double side) {
-        return 4 * side;
+        double perimeter = 4 * side; // kare çevresi hesaplanıyor
+        return perimeter;
     }
 
-    // 3️⃣ Dikdörtgen Alanı
+    // 3️⃣ Dikdörtgen Alanı Hesaplama
+    // Formül: Alan = genişlik × yükseklik
     public static double calculateRectangleArea(double width, double height) {
-        return width * height;
+        double area = width * height; // dikdörtgen alanı hesaplanıyor
+        return area;
     }
 
-    // 4️⃣ Dikdörtgen Çevresi
+    // 4️⃣ Dikdörtgen Çevresi Hesaplama
+    // Formül: Çevre = 2 × (genişlik + yükseklik)
     public static double calculateRectanglePerimeter(double width, double height) {
-        return 2 * (width + height);
+        double perimeter = 2 * (width + height); // dikdörtgen çevresi hesaplanıyor
+        return perimeter;
     }
 
-    // 5️⃣ Daire Alanı
+    // 5️⃣ Daire Alanı Hesaplama
+    // Formül: Alan = π × r²
     public static double calculateCircleArea(double radius) {
-        return Math.PI * Math.pow(radius, 2);
+        double area = Math.PI * radius * radius; // daire alanı hesaplanıyor
+        return area;
     }
 
-    // 6️⃣ Daire Çevresi
+    // 6️⃣ Daire Çevresi Hesaplama
+    // Formül: Çevre = 2 × π × r
     public static double calculateCircleCircumference(double radius) {
-        return 2 * Math.PI * radius;
+        double circumference = 2 * Math.PI * radius; // daire çevresi hesaplanıyor
+        return circumference;
     }
 
-    // 7️⃣ Üçgen Alanı
+    // 7️⃣ Üçgen Alanı Hesaplama
+    // Formül: Alan = (taban × yükseklik) / 2
     public static double calculateTriangleArea(double base, double height) {
-        return (base * height) / 2;
+        double area = (base * height) / 2; // üçgen alanı hesaplanıyor
+        return area;
     }
 
-    // 8️⃣ Üçgen Çevresi
+    // 8️⃣ Üçgen Çevresi Hesaplama
+    // Formül: Çevre = a + b + c
     public static double calculateTrianglePerimeter(double a, double b, double c) {
-        return a + b + c;
+        double perimeter = a + b + c; // üçgen çevresi hesaplanıyor
+        return perimeter;
+    }
+
+    // 🔹 Test için main metodu
+    public static void main(String[] args) {
+
+        // --- Kare ---
+        double kareKenar = 5;
+        System.out.println("Kare Alanı (kenar=" + kareKenar + "): " + calculateSquareArea(kareKenar));
+        System.out.println("Kare Çevresi (kenar=" + kareKenar + "): " + calculateSquarePerimeter(kareKenar));
+
+        // --- Dikdörtgen ---
+        double genislik = 4, yukseklik = 6;
+        System.out.println("\nDikdörtgen Alanı (genişlik=" + genislik + ", yükseklik=" + yukseklik + "): " + calculateRectangleArea(genislik, yukseklik));
+        System.out.println("Dikdörtgen Çevresi (genişlik=" + genislik + ", yükseklik=" + yukseklik + "): " + calculateRectanglePerimeter(genislik, yukseklik));
+
+        // --- Daire ---
+        double yaricap = 3;
+        System.out.println("\nDaire Alanı (yarıçap=" + yaricap + "): " + calculateCircleArea(yaricap));
+        System.out.println("Daire Çevresi (yarıçap=" + yaricap + "): " + calculateCircleCircumference(yaricap));
+
+        // --- Üçgen ---
+        double taban = 4, yukseklikU = 5, a = 3, b = 4, c = 5;
+        System.out.println("\nÜçgen Alanı (taban=" + taban + ", yükseklik=" + yukseklikU + "): " + calculateTriangleArea(taban, yukseklikU));
+        System.out.println("Üçgen Çevresi (a=" + a + ", b=" + b + ", c=" + c + "): " + calculateTrianglePerimeter(a, b, c));
+    }
+    }
     }
 
     // === MAIN ===
